@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Edit Quote</mat-card-title>
+    <hr>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field>
+        <input matInput placeholder="Enter Quote" name="content" [(ngModel)]="content">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Select Author" [(ngModel)]="authorId" name="authorId">
+          <mat-option *ngFor="let author of authors" [value]="author.id">
+            {{author.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="updateQuote()">Update Quote</button>
+  </mat-card-actions>
+</mat-card>
